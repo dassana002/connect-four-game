@@ -1,14 +1,18 @@
 package lk.ijse.dep.service;
 
 public class Winner {
-    private int col1 = -1;
-    private int col2 = -1;;
-    private int row1 = -1;;
-    private int row2 = -1;;
+    private int col1;
+    private int col2;
+    private int row1;
+    private int row2;
     Piece winningPiece;
 
     public Winner(Piece winningPiece) {
         this.winningPiece = winningPiece;
+        this.col1 = -1;
+        this.col2 = -1;
+        this.row1 = -1;
+        this.row2 = -1;
     }
 
     public Winner(int col1, int col2, int row1, int row2, Piece winningPiece) {
