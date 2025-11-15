@@ -1,6 +1,6 @@
 package lk.ijse.dep.service;
 
-public class BoardImpl implements Board{
+public class BoardImpl {
     Piece[][] piece =  new Piece[6][5];
     BoardUI boardUI;
 
