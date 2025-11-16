@@ -1,11 +1,12 @@
 package lk.ijse.dep.service;
 
 public class BoardImpl {
-    Piece[][] piece =  new Piece[6][5];
-    BoardUI boardUI;
+    private final Piece[][] pieces;
+    private final BoardUI boardUI;
 
-    public BoardImpl(BoardUI boardUI){
-        this.boardUI = boardUI;
+    public BoardImpl
+    public BoardImpl(BoardUI newboard){
+        this.boardUI = newboard;
     }
 
 }
