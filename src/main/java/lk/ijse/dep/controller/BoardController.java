@@ -45,7 +45,8 @@ public class BoardController implements BoardUI {
     }
 
     private void colOnClick(VBox col) {
-        if (!isAiPlaying && !isGameOver) humanPlayer.movePiece(grpCols.getChildren().indexOf(col));
+        if (!isAiPlaying && !isGameOver)
+            humanPlayer.movePiece(grpCols.getChildren().indexOf(col));
     }
 
     public void initData(String playerName) {

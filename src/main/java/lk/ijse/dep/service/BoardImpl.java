@@ -16,11 +16,13 @@ public class BoardImpl implements Board {
         }
     }
 
+    /// Used to communicate with the UI layer to update the board visually.
     @Override
     public BoardUI getBoardUI() {
         return this.boardUI;
     }
 
+    /// Finds the first empty row position in the specified column.
     @Override
     public int findNextAvailableSpot(int col) {
         for (int row = 0; row < NUM_OF_ROWS; row++) {
@@ -31,11 +33,20 @@ public class BoardImpl implements Board {
         return -1;
     }
 
+    /// Checks whether the specified column is valid.
     @Override
     public boolean isLegalMove(int col) {
-        return findNextAvailableSpot(col) != -1;
+        boolean result = false;
+        if (col != -1) {
+            if (findNextAvailableSpot(col) != -1){
+                result = true;
+            };
+        }
+        return result;
     }
 
+    /// Checks whether any legal empty spots are still available in the game.
+    /// Checks if the game can continue.
     @Override
     public boolean existLegalMoves() {
         for (int i = 0; i < NUM_OF_COLUMNS; i++) {
@@ -48,6 +59,7 @@ public class BoardImpl implements Board {
         return false;
     }
 
+    /// Add a new Piece
     @Override
     public void updateMove(int col, Piece move) {
         for (int i = 0; i < NUM_OF_ROWS; i++) {
@@ -58,6 +70,7 @@ public class BoardImpl implements Board {
         }
     }
 
+    /// Determines whether the game has been won and identifies the winning condition.
     @Override
     public Winner findWinner() {
 

@@ -5,6 +5,6 @@ import lk.ijse.dep.service.Player;
 
 public class HumanPlayer extends Player {
     public HumanPlayer(Board newBoard) {
-        super();
+        super(newBoard);
     }
 }
