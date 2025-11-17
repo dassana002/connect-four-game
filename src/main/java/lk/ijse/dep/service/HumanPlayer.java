@@ -17,11 +17,12 @@ public class HumanPlayer extends Player {
         /// Notify UI about the move
         board.getBoardUI().update(col, true);
 
-        Winner winner = board.findWinner();  /// check for winner
+        /// check for winner
+        Winner winner = board.findWinner();
 
         if (winner.getWinningPiece() != Piece.EMPTY) {
             board.getBoardUI().notifyWinner(winner);   /// There is a winner
-        } else if (board.existLegalMoves()){
+        } else if (!board.existLegalMoves()){
             board.getBoardUI().notifyWinner(new Winner(Piece.EMPTY)); /// no winner and no legal moves left = tied game
         }
     }

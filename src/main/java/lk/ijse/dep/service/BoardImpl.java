@@ -46,10 +46,10 @@ public class BoardImpl implements Board {
     public boolean existLegalMoves() {
         for (int col = 0; col < NUM_OF_COLUMNS; col++) {
             if (isLegalMove(col)) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     /// Add a new Piece
@@ -61,7 +61,8 @@ public class BoardImpl implements Board {
 
     @Override
     public void updateMove(int col, int row, Piece move) {
-
+        /// Not check the validation in this move, this Move is already valid.
+        pieces[col][row] = move;
     }
 
     /// Determines whether the game has been won and identifies the winning condition.
