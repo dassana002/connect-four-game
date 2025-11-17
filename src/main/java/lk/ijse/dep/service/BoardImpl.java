@@ -68,9 +68,8 @@ public class BoardImpl implements Board {
     /// Determines whether the game has been won and identifies the winning condition.
     @Override
     public Winner findWinner() {
-
+        /// Vertical check
         for (int i = 0; i < NUM_OF_COLUMNS; i++) {
-
             if (pieces[i][1] == pieces[i][2] &&
                     pieces[i][2] == pieces[i][3] &&
                     pieces[i][3] == pieces[i][4] &&
@@ -85,8 +84,8 @@ public class BoardImpl implements Board {
             }
         }
 
+        /// Horizontal check
         for (int j = 0; j < NUM_OF_ROWS; j++) {
-
             if (pieces[0][j] == pieces[1][j] &&
                     pieces[1][j] == pieces[2][j] &&
                     pieces[2][j] == pieces[3][j] &&
@@ -107,5 +106,15 @@ public class BoardImpl implements Board {
             }
         }
         return new Winner(Piece.EMPTY);
+    }
+
+    /// Get all pieces
+    @Override
+    public Piece[][] getPieces() {
+        Piece[][] copyPieces = new Piece[NUM_OF_COLUMNS][NUM_OF_ROWS];
+        for (int i = 0; i < NUM_OF_COLUMNS; i++) {
+            System.arraycopy(pieces[i], 0, copyPieces[i], 0, NUM_OF_ROWS);
+        }
+        return copyPieces;
     }
 }
