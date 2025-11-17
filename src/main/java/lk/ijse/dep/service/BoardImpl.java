@@ -59,6 +59,11 @@ public class BoardImpl implements Board {
         pieces[col][row] = move;
     }
 
+    @Override
+    public void updateMove(int col, int row, Piece move) {
+
+    }
+
     /// Determines whether the game has been won and identifies the winning condition.
     @Override
     public Winner findWinner() {
